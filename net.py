@@ -139,7 +139,7 @@ class PConvUNet(nn.Module):
             h, h_mask = getattr(self, dec_l_key)(h, h_mask)
 
         # Force results to be in (0, 1)
-        h = F.sigmoid(h)
+        h = torch.sigmoid(h)
 
         return h, h_mask
 
